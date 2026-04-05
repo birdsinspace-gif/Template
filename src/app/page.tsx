@@ -3,31 +3,67 @@ const menuItems = [
     name: "Lemon Luxe",
     description:
       "Bright lemon cake with a clean, elegant finish and a refined swirl of icing.",
+    image:
+      "https://images.pexels.com/photos/4099128/pexels-photo-4099128.jpeg?cs=srgb&dl=pexels-taryn-elliott-4099128.jpg&fm=jpg",
   },
   {
     name: "Milk Chocolate Classic",
     description:
       "Rich milk chocolate with broad appeal, smooth texture, and timeless presentation.",
+    image:
+      "https://images.pexels.com/photos/6815973/pexels-photo-6815973.jpeg?cs=srgb&dl=pexels-saveurssecretes-6815973.jpg&fm=jpg",
   },
   {
     name: "Dark Chocolate Decadence",
     description:
       "A deeper cocoa profile with a more elevated, sophisticated flavor experience.",
+    image:
+      "https://images.pexels.com/photos/6822806/pexels-photo-6822806.jpeg?cs=srgb&dl=pexels-saveurssecretes-6822806.jpg&fm=jpg",
   },
   {
     name: "Vanilla Gold",
     description:
       "Classic vanilla, elevated through polish, restraint, and premium presentation.",
+    image:
+      "https://images.pexels.com/photos/4099124/pexels-photo-4099124.jpeg?cs=srgb&dl=pexels-taryn-elliott-4099124.jpg&fm=jpg",
   },
   {
     name: "Strawberry Velvet",
     description:
       "Soft strawberry flavor with a celebratory, feminine look and a graceful finish.",
+    image:
+      "https://images.pexels.com/photos/853005/pexels-photo-853005.jpeg?cs=srgb&dl=pexels-jessbaileydesign-853005.jpg&fm=jpg",
   },
   {
     name: "Strawberry Vanilla Swirl",
     description:
       "A signature favorite with visual charm, party appeal, and an elegant flavor balance.",
+    image:
+      "https://images.pexels.com/photos/853005/pexels-photo-853005.jpeg?cs=srgb&dl=pexels-jessbaileydesign-853005.jpg&fm=jpg",
+  },
+];
+
+const pricingTiers = [
+  {
+    title: "Single Signature Cupcake",
+    price: "$4.95",
+    note: "Perfect for gifting, sampling, and impulse purchase.",
+  },
+  {
+    title: "Half Dozen",
+    price: "$28.99",
+    note: "The sweet spot for small celebrations and family orders.",
+  },
+  {
+    title: "Dozen Box",
+    price: "$54.99",
+    note: "Our best value anchor for birthdays, showers, and hostess gifting.",
+    featured: true,
+  },
+  {
+    title: "Two Dozen Party Box",
+    price: "$104.99",
+    note: "Built for gatherings, office orders, and dessert tables.",
   },
 ];
 
@@ -44,24 +80,6 @@ const serviceAreas = [
   },
 ];
 
-const stylePoints = [
-  {
-    title: "Signature Swirl",
-    copy:
-      "Our icing style is intentionally clean and structured, a classic upward swirl that feels polished, premium, and consistent.",
-  },
-  {
-    title: "Elegant Simplicity",
-    copy:
-      "We do not hide behind over-decoration. The visual appeal comes from balance, finish, restraint, and consistency.",
-  },
-  {
-    title: "Gold Detail",
-    copy:
-      "Selective gold accents create a celebratory, upscale look without overwhelming the cupcake itself.",
-  },
-];
-
 const css = `
 html {
   scroll-behavior: smooth;
@@ -70,8 +88,8 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(232, 94, 162, 0.16), transparent 28%),
-    radial-gradient(circle at top right, rgba(216, 169, 58, 0.16), transparent 30%),
+    radial-gradient(circle at top left, rgba(232, 94, 162, 0.14), transparent 28%),
+    radial-gradient(circle at top right, rgba(216, 169, 58, 0.15), transparent 30%),
     linear-gradient(180deg, #fffafc 0%, #fff7fb 38%, #fffefb 100%);
   color: #24151f;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -84,6 +102,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+img {
+  display: block;
+  width: 100%;
 }
 
 .site-shell {
@@ -100,7 +123,7 @@ a {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(18px);
-  background: rgba(255, 249, 252, 0.78);
+  background: rgba(255, 249, 252, 0.82);
   border-bottom: 1px solid rgba(159, 111, 137, 0.12);
 }
 
@@ -116,12 +139,11 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
-  min-width: 0;
 }
 
 .brandMark {
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 999px;
   background:
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 28%),
@@ -137,7 +159,7 @@ a {
 
 .brandTitle {
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.12rem;
+  font-size: 1.14rem;
   font-weight: 700;
   line-height: 1.05;
 }
@@ -176,13 +198,13 @@ a {
 }
 
 .hero {
-  padding: 72px 0 44px;
+  padding: 72px 0 48px;
 }
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 38px;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: 36px;
   align-items: center;
 }
 
@@ -192,7 +214,7 @@ a {
   gap: 10px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.78);
   border: 1px solid rgba(159, 111, 137, 0.12);
   color: #c83f86;
   font-weight: 700;
@@ -211,7 +233,7 @@ a {
 h1 {
   margin: 20px 0 16px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  font-size: clamp(2.7rem, 5vw, 5rem);
   line-height: 0.96;
   letter-spacing: -0.03em;
 }
@@ -271,7 +293,7 @@ h1 {
 
 .statCard {
   padding: 18px;
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(159, 111, 137, 0.12);
   border-radius: 20px;
   box-shadow: 0 14px 32px rgba(117, 55, 87, 0.08);
@@ -289,160 +311,47 @@ h1 {
   font-size: 0.92rem;
 }
 
-.heroVisualWrap {
-  display: flex;
-  justify-content: center;
+.heroGallery {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  grid-template-rows: 250px 250px;
+  gap: 18px;
 }
 
-.heroVisual {
+.heroPhotoCard {
   position: relative;
-  width: 100%;
-  min-height: 560px;
-  border-radius: 34px;
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.2)),
-    linear-gradient(180deg, rgba(255, 245, 250, 0.9), rgba(255, 255, 255, 0.85));
-  border: 1px solid rgba(159, 111, 137, 0.14);
-  box-shadow: 0 24px 70px rgba(117, 55, 87, 0.12);
   overflow: hidden;
-}
-
-.heroVisual::before {
-  content: "";
-  position: absolute;
-  inset: auto auto 0 -10%;
-  width: 120%;
-  height: 160px;
-  background: radial-gradient(circle at center, rgba(216, 169, 58, 0.12), transparent 60%);
-}
-
-.cupcakeCard {
-  position: absolute;
-  width: 170px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px 12px 12px;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.62);
+  border-radius: 28px;
+  background: rgba(255,255,255,0.75);
   border: 1px solid rgba(159, 111, 137, 0.12);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 16px 38px rgba(117, 55, 87, 0.1);
+  box-shadow: 0 20px 46px rgba(117, 55, 87, 0.12);
 }
 
-.cupcakeTall {
-  left: 10%;
-  top: 20%;
+.heroPhotoCard img {
+  height: 100%;
+  object-fit: cover;
 }
 
-.cupcakeMedium {
-  right: 12%;
-  top: 16%;
+.heroPhotoLarge {
+  grid-row: span 2;
 }
 
-.cupcakeShort {
-  left: 34%;
-  bottom: 11%;
-}
-
-.cupcakeTop {
-  width: 108px;
-  height: 108px;
-  border-radius: 50% 50% 46% 46%;
-  position: relative;
-  margin-bottom: 10px;
-}
-
-.cupcakeTop::before,
-.cupcakeTop::after {
-  content: "";
+.heroPhotoTag {
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 999px;
-}
-
-.cupcakeTop::before {
-  width: 76px;
-  height: 34px;
-  top: 24px;
-  background: rgba(255, 255, 255, 0.5);
-  filter: blur(8px);
-}
-
-.cupcakeTop::after {
-  width: 18px;
-  height: 18px;
-  top: 10px;
-  background: linear-gradient(135deg, #d8a93a, #f4d37b);
-  box-shadow: 0 0 0 5px rgba(216, 169, 58, 0.12);
-}
-
-.pinkGold {
-  background:
-    radial-gradient(circle at 35% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0) 20%),
-    linear-gradient(180deg, #ffd7ec 0%, #f6a7ce 55%, #ea74af 100%);
-}
-
-.lemonGold {
-  background:
-    radial-gradient(circle at 35% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0) 20%),
-    linear-gradient(180deg, #fff3b9 0%, #f4d86b 58%, #e1b941 100%);
-}
-
-.strawberryGold {
-  background:
-    radial-gradient(circle at 35% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0) 20%),
-    linear-gradient(180deg, #ffd4df 0%, #f39abb 55%, #dd6f98 100%);
-}
-
-.cupcakeBase {
-  width: 76px;
-  height: 56px;
-  border-radius: 0 0 16px 16px;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.34) 0 10%, transparent 10% 20%, rgba(255,255,255,0.26) 20% 30%, transparent 30% 40%, rgba(255,255,255,0.26) 40% 50%, transparent 50% 60%, rgba(255,255,255,0.26) 60% 70%, transparent 70% 80%, rgba(255,255,255,0.24) 80% 90%, transparent 90% 100%),
-    linear-gradient(180deg, #e5be58, #c89328);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.4);
-}
-
-.cupcakeLabel {
-  margin-top: 12px;
-  font-size: 0.85rem;
-  color: #6b5262;
-  text-align: center;
-  font-weight: 600;
-}
-
-.floatingBadge {
-  position: absolute;
+  left: 16px;
+  bottom: 16px;
   padding: 10px 14px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.86);
+  background: rgba(255,255,255,0.88);
   border: 1px solid rgba(159, 111, 137, 0.12);
-  box-shadow: 0 12px 30px rgba(117, 55, 87, 0.08);
   color: #6b5262;
-  font-size: 0.88rem;
+  font-size: 0.86rem;
   font-weight: 700;
-}
-
-.badgeOne {
-  left: 8%;
-  bottom: 10%;
-}
-
-.badgeTwo {
-  right: 8%;
-  bottom: 22%;
-}
-
-.badgeThree {
-  right: 14%;
-  top: 8%;
+  box-shadow: 0 10px 24px rgba(117, 55, 87, 0.08);
 }
 
 .section {
-  padding: 58px 0;
+  padding: 62px 0;
 }
 
 .sectionSoft {
@@ -452,7 +361,7 @@ h1 {
 }
 
 .sectionIntro {
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 .sectionKicker {
@@ -471,13 +380,13 @@ h1 {
 h2 {
   margin: 0 0 12px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2rem, 3vw, 3.1rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   line-height: 1.04;
 }
 
 .sectionCopy,
 .ctaCopy {
-  max-width: 70ch;
+  max-width: 72ch;
   color: #6b5262;
   line-height: 1.8;
   font-size: 1.04rem;
@@ -498,27 +407,44 @@ h2 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.fourUp {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .twoUp {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .card,
 .featureBox,
-.ctaPanel,
-.stylePanel {
-  background: rgba(255, 255, 255, 0.82);
+.ctaPanel {
+  background: rgba(255, 255, 255, 0.84);
   border: 1px solid rgba(159, 111, 137, 0.12);
   box-shadow: 0 18px 44px rgba(117, 55, 87, 0.08);
 }
 
 .card {
   border-radius: 24px;
-  padding: 24px;
+  padding: 20px;
 }
 
 .menuCard {
-  position: relative;
   overflow: hidden;
+  padding: 0;
+}
+
+.menuImageWrap {
+  height: 220px;
+  overflow: hidden;
+}
+
+.menuImage {
+  height: 100%;
+  object-fit: cover;
+}
+
+.menuCardBody {
+  padding: 22px 20px 22px;
 }
 
 .menuAccent {
@@ -526,7 +452,7 @@ h2 {
   height: 6px;
   border-radius: 999px;
   background: linear-gradient(135deg, #e85ea2, #d8a93a);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 h3 {
@@ -536,11 +462,47 @@ h3 {
 }
 
 .card p,
-.featureBox p,
-.stylePanel p {
+.featureBox p {
   margin: 0;
   color: #6b5262;
   line-height: 1.75;
+}
+
+.priceCard {
+  position: relative;
+  padding: 24px;
+}
+
+.priceCard.featured {
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,244,251,0.96));
+  border: 1px solid rgba(232, 94, 162, 0.25);
+  transform: translateY(-4px);
+}
+
+.priceBadge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #e85ea2, #d8a93a);
+  color: white;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.priceAmount {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  margin: 16px 0 10px;
+}
+
+.priceNote {
+  font-size: 0.96rem;
+  color: #6b5262;
 }
 
 .locationCard {
@@ -563,88 +525,6 @@ h3 {
   box-shadow: 0 10px 24px rgba(200, 63, 134, 0.18);
 }
 
-.styleLayout {
-  display: grid;
-  grid-template-columns: 1.06fr 0.94fr;
-  gap: 24px;
-  align-items: start;
-}
-
-.styleLeft {
-  min-width: 0;
-}
-
-.stylePanel {
-  margin-top: 24px;
-  border-radius: 28px;
-  padding: 24px;
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 20px;
-  align-items: center;
-}
-
-.styleSwirlArt {
-  position: relative;
-  width: 150px;
-  height: 170px;
-  margin: 0 auto;
-}
-
-.swirl {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 35% 28%, rgba(255,255,255,0.9), rgba(255,255,255,0) 20%),
-    linear-gradient(180deg, #ffd7ec 0%, #f5a3ca 58%, #e978b1 100%);
-  box-shadow: 0 8px 16px rgba(200, 63, 134, 0.08);
-}
-
-.swirl1 {
-  width: 34px;
-  height: 24px;
-  top: 8px;
-}
-
-.swirl2 {
-  width: 54px;
-  height: 28px;
-  top: 28px;
-}
-
-.swirl3 {
-  width: 82px;
-  height: 38px;
-  top: 50px;
-}
-
-.swirl4 {
-  width: 112px;
-  height: 54px;
-  top: 84px;
-  border-radius: 999px 999px 46px 46px;
-}
-
-.swirlBase {
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 84px;
-  height: 56px;
-  border-radius: 0 0 16px 16px;
-  background:
-    linear-gradient(90deg, rgba(255,255,255,0.34) 0 10%, transparent 10% 20%, rgba(255,255,255,0.26) 20% 30%, transparent 30% 40%, rgba(255,255,255,0.26) 40% 50%, transparent 50% 60%, rgba(255,255,255,0.26) 60% 70%, transparent 70% 80%, rgba(255,255,255,0.24) 80% 90%, transparent 90% 100%),
-    linear-gradient(180deg, #e5be58, #c89328);
-}
-
-.styleRight {
-  display: grid;
-  gap: 18px;
-}
-
 .featureStrip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -658,9 +538,9 @@ h3 {
 
 .ctaPanel {
   border-radius: 32px;
-  padding: 38px 28px;
+  padding: 40px 28px;
   background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), rgba(255,255,255,0.55)),
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(255,255,255,0.58)),
     linear-gradient(135deg, rgba(232, 94, 162, 0.1), rgba(216, 169, 58, 0.14));
   text-align: center;
 }
@@ -679,30 +559,31 @@ h3 {
 }
 
 @media (max-width: 1080px) {
-  .heroGrid,
-  .styleLayout {
+  .heroGrid {
     grid-template-columns: 1fr;
   }
 
-  .heroVisual {
-    min-height: 500px;
+  .fourUp {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 900px) {
   .threeUp,
+  .twoUp,
   .featureStrip,
-  .heroStats {
+  .heroStats,
+  .heroGallery,
+  .fourUp {
     grid-template-columns: 1fr;
   }
 
-  .twoUp {
-    grid-template-columns: 1fr;
+  .heroGallery {
+    grid-template-rows: 280px 220px 220px;
   }
 
-  .stylePanel {
-    grid-template-columns: 1fr;
-    text-align: center;
+  .heroPhotoLarge {
+    grid-row: span 1;
   }
 
   .nav {
@@ -723,34 +604,6 @@ h3 {
 
   .section {
     padding: 42px 0;
-  }
-
-  .heroVisual {
-    min-height: 540px;
-  }
-
-  .cupcakeTall {
-    left: 4%;
-    top: 17%;
-  }
-
-  .cupcakeMedium {
-    right: 4%;
-    top: 12%;
-  }
-
-  .cupcakeShort {
-    left: 24%;
-    bottom: 13%;
-  }
-
-  .cupcakeCard {
-    width: 144px;
-  }
-
-  .cupcakeTop {
-    width: 90px;
-    height: 90px;
   }
 
   h1 {
@@ -778,8 +631,8 @@ export default function HomePage() {
 
             <nav className="navLinks">
               <a href="#menu">Menu</a>
+              <a href="#pricing">Pricing</a>
               <a href="#locations">Locations</a>
-              <a href="#style">Signature Style</a>
               <a href="#about">About</a>
               <a href="#order" className="navCta">
                 Order Inquiry
@@ -790,7 +643,7 @@ export default function HomePage() {
 
         <section className="hero">
           <div className="container heroGrid">
-            <div className="heroCopy">
+            <div>
               <div className="eyebrow">
                 <span className="eyebrowDot" />
                 Premium cupcakes, beautifully presented
@@ -803,8 +656,8 @@ export default function HomePage() {
 
               <p className="lead">
                 Glitter &amp; Gold Cupcake Company creates premium cupcakes for
-                celebrations, gifting, showers, parties, and special events.
-                We currently serve <strong>Upstate South Carolina</strong> and{" "}
+                celebrations, gifting, showers, parties, and special events. We
+                currently serve <strong>Upstate South Carolina</strong> and{" "}
                 <strong>Roswell, Georgia</strong> only.
               </p>
 
@@ -812,8 +665,8 @@ export default function HomePage() {
                 <a href="#order" className="btn btnPrimary">
                   Request an Order
                 </a>
-                <a href="#locations" className="btn btnSecondary">
-                  See Service Areas
+                <a href="#pricing" className="btn btnSecondary">
+                  View Pricing
                 </a>
               </div>
 
@@ -828,36 +681,34 @@ export default function HomePage() {
                 </div>
                 <div className="statCard">
                   <div className="statValue">1</div>
-                  <div className="statLabel">clean premium style</div>
+                  <div className="statLabel">premium visual standard</div>
                 </div>
               </div>
             </div>
 
-            <div className="heroVisualWrap">
-              <div className="heroVisual">
-                <div className="cupcakeCard cupcakeTall">
-                  <div className="cupcakeTop pinkGold" />
-                  <div className="cupcakeBase" />
-                  <div className="cupcakeLabel">Signature Swirl</div>
-                </div>
+            <div className="heroGallery">
+              <div className="heroPhotoCard heroPhotoLarge">
+                <img
+                  src="https://images.pexels.com/photos/4099124/pexels-photo-4099124.jpeg?cs=srgb&dl=pexels-taryn-elliott-4099124.jpg&fm=jpg"
+                  alt="Elegant vanilla cupcakes with fruit and floral garnish"
+                />
+                <div className="heroPhotoTag">Vanilla Gold</div>
+              </div>
 
-                <div className="cupcakeCard cupcakeMedium">
-                  <div className="cupcakeTop lemonGold" />
-                  <div className="cupcakeBase" />
-                  <div className="cupcakeLabel">Elegant Finish</div>
-                </div>
+              <div className="heroPhotoCard">
+                <img
+                  src="https://images.pexels.com/photos/853005/pexels-photo-853005.jpeg?cs=srgb&dl=pexels-jessbaileydesign-853005.jpg&fm=jpg"
+                  alt="Pink frosted strawberry cupcake"
+                />
+                <div className="heroPhotoTag">Strawberry Velvet</div>
+              </div>
 
-                <div className="cupcakeCard cupcakeShort">
-                  <div className="cupcakeTop strawberryGold" />
-                  <div className="cupcakeBase" />
-                  <div className="cupcakeLabel">Gold Detail</div>
-                </div>
-
-                <div className="floatingBadge badgeOne">Lemon Luxe</div>
-                <div className="floatingBadge badgeTwo">Vanilla Gold</div>
-                <div className="floatingBadge badgeThree">
-                  Strawberry Vanilla Swirl
-                </div>
+              <div className="heroPhotoCard">
+                <img
+                  src="https://images.pexels.com/photos/6815973/pexels-photo-6815973.jpeg?cs=srgb&dl=pexels-saveurssecretes-6815973.jpg&fm=jpg"
+                  alt="Chocolate cupcake with pink frosting"
+                />
+                <div className="heroPhotoTag">Milk Chocolate Classic</div>
               </div>
             </div>
           </div>
@@ -869,33 +720,68 @@ export default function HomePage() {
               <p className="sectionKicker">Menu</p>
               <h2>Our signature cupcake collection</h2>
               <p className="sectionCopy">
-                A polished, crowd-pleasing menu built around classic flavors
-                with a luxurious finish. The aesthetic is celebratory, clean,
-                and giftable.
+                Clean swirl icing, polished presentation, and classic flavors
+                positioned for gifting, dessert tables, and premium local
+                celebrations.
               </p>
             </div>
 
             <div className="cardGrid threeUp">
               {menuItems.map((item) => (
                 <article key={item.name} className="card menuCard">
-                  <div className="menuAccent" />
-                  <h3>{item.name}</h3>
-                  <p>{item.description}</p>
+                  <div className="menuImageWrap">
+                    <img
+                      className="menuImage"
+                      src={item.image}
+                      alt={item.name}
+                    />
+                  </div>
+                  <div className="menuCardBody">
+                    <div className="menuAccent" />
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="locations" className="section sectionSoft">
+        <section id="pricing" className="section sectionSoft">
+          <div className="container">
+            <div className="sectionIntro">
+              <p className="sectionKicker">Pricing</p>
+              <h2>Priced for premium gifting and events</h2>
+              <p className="sectionCopy">
+                The structure below uses a clean anchor strategy: a strong
+                single-cupcake entry point, a highly attractive half-dozen, a
+                best-value featured dozen, and a party-box step-up for events.
+              </p>
+            </div>
+
+            <div className="cardGrid fourUp">
+              {pricingTiers.map((tier) => (
+                <article
+                  key={tier.title}
+                  className={`card priceCard${tier.featured ? " featured" : ""}`}
+                >
+                  {tier.featured ? <div className="priceBadge">Best Value</div> : null}
+                  <h3>{tier.title}</h3>
+                  <div className="priceAmount">{tier.price}</div>
+                  <p className="priceNote">{tier.note}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="locations" className="section">
           <div className="container">
             <div className="sectionIntro">
               <p className="sectionKicker">Locations</p>
               <h2>Where we currently serve</h2>
               <p className="sectionCopy">
-                Glitter &amp; Gold Cupcake Company is intentionally focused on
-                two local markets. Orders are currently available only in the
-                locations below.
+                Orders are currently available only in the locations below.
               </p>
             </div>
 
@@ -911,78 +797,38 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="style" className="section">
-          <div className="container styleLayout">
-            <div className="styleLeft">
-              <p className="sectionKicker">Signature Style</p>
-              <h2>The icing is intentionally clean</h2>
-              <p className="sectionCopy">
-                Every cupcake features our signature swirl, a clean, elevated,
-                upward build that feels refined and timeless. We focus on
-                consistent premium presentation rather than cluttered decoration.
-              </p>
-
-              <div className="stylePanel">
-                <div className="styleSwirlArt">
-                  <div className="swirl swirl1" />
-                  <div className="swirl swirl2" />
-                  <div className="swirl swirl3" />
-                  <div className="swirl swirl4" />
-                  <div className="swirlBase" />
-                </div>
-                <div>
-                  <h3>Classic Swirl Finish</h3>
-                  <p>
-                    The beauty is in the structure. Balanced shape, premium
-                    finish, and visual consistency create the brand.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="styleRight">
-              {stylePoints.map((item) => (
-                <article key={item.title} className="card">
-                  <h3>{item.title}</h3>
-                  <p>{item.copy}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section id="about" className="section sectionSoft">
           <div className="container">
             <div className="sectionIntro">
               <p className="sectionKicker">About</p>
               <h2>Why Glitter &amp; Gold works</h2>
               <p className="sectionCopy">
-                This is not positioned as a casual cupcake stand. It is a
-                polished dessert brand built around presentation, celebration,
-                local focus, and visual elegance.
+                This brand is not trying to win on clutter or novelty. It wins
+                on elegance, consistency, visual polish, and a premium local
+                feel.
               </p>
             </div>
 
             <div className="featureStrip">
               <div className="featureBox">
-                <h3>Premium Presentation</h3>
+                <h3>Signature Swirl</h3>
                 <p>
-                  Designed to feel beautiful in a gift box, on a dessert table,
-                  or at an event.
+                  The icing is intentionally clean, structured, and repeatable.
+                  That makes the presentation feel premium, not basic.
                 </p>
               </div>
               <div className="featureBox">
-                <h3>Classic Flavors, Elevated</h3>
+                <h3>Premium Positioning</h3>
                 <p>
-                  Familiar favorites presented in a more elegant and memorable
-                  way.
+                  The pricing is built to signal gifting quality and event
+                  readiness, not grocery-store commodity dessert.
                 </p>
               </div>
               <div className="featureBox">
-                <h3>Focused Local Service</h3>
+                <h3>Focused Geography</h3>
                 <p>
                   Serving only Upstate South Carolina and Roswell, Georgia keeps
-                  the brand selective and intentional.
+                  the brand selective and operationally tight.
                 </p>
               </div>
             </div>
@@ -995,10 +841,11 @@ export default function HomePage() {
               <p className="sectionKicker centerKicker">Order Inquiry</p>
               <h2>Order for your next event</h2>
               <p className="ctaCopy">
-                Planning a shower, celebration, party, gifting moment, or custom
-                dessert table? Glitter &amp; Gold Cupcake Company is currently
-                accepting inquiries for <strong>Upstate South Carolina</strong>{" "}
-                and <strong>Roswell, Georgia</strong>.
+                Planning a shower, birthday, party, hostess gift, or dessert
+                table? Glitter &amp; Gold Cupcake Company is currently accepting
+                inquiries for <strong>Upstate South Carolina</strong> and{" "}
+                <strong>Roswell, Georgia</strong>. Custom catering and event
+                quotes are available by request.
               </p>
 
               <div className="ctaActions">
@@ -1008,8 +855,8 @@ export default function HomePage() {
                 >
                   Email to Order
                 </a>
-                <a href="#menu" className="btn btnSecondary">
-                  View Menu
+                <a href="#pricing" className="btn btnSecondary">
+                  Review Pricing
                 </a>
               </div>
             </div>
