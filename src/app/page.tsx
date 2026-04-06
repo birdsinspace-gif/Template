@@ -505,6 +505,31 @@ h3 {
   color: #6b5262;
 }
 
+.customOrderBox {
+  margin-top: 28px;
+  border-radius: 28px;
+  padding: 30px 24px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.92), rgba(255,255,255,0.58)),
+    linear-gradient(135deg, rgba(232, 94, 162, 0.08), rgba(216, 169, 58, 0.12));
+  border: 1px solid rgba(159, 111, 137, 0.12);
+  box-shadow: 0 18px 44px rgba(117, 55, 87, 0.08);
+  text-align: center;
+}
+
+.customOrderTitle {
+  margin-bottom: 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.7rem;
+}
+
+.customOrderCopy {
+  margin: 0 auto;
+  max-width: 60ch;
+  color: #6b5262;
+  line-height: 1.8;
+}
+
 .locationCard {
   position: relative;
   padding-left: 72px;
@@ -771,6 +796,32 @@ export default function HomePage() {
                   <p className="priceNote">{tier.note}</p>
                 </article>
               ))}
+            </div>
+
+            <div className="customOrderBox">
+              <div className="customOrderTitle">
+                Need a custom order or looking for catering? We do that, too.
+              </div>
+              <p className="customOrderCopy">
+                Glitter &amp; Gold Cupcake Company offers custom orders,
+                catering-style quantities, and special event quotes for larger
+                celebrations, dessert tables, and hosted gatherings.
+              </p>
+
+              <div className="ctaActions" style={{ justifyContent: "center" }}>
+                <a
+                  href="mailto:hello@glitterandgoldcupcakes.com"
+                  className="btn btnPrimary"
+                >
+                  Email to Order
+                </a>
+                <a
+                  href="mailto:hello@glitterandgoldcupcakes.com"
+                  className="btn btnSecondary"
+                >
+                  Order Now
+                </a>
+              </div>
             </div>
           </div>
         </section>
