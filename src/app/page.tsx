@@ -1,3 +1,5 @@
+"use client";
+
 const menuItems = [
   {
     name: "Lemon Luxe",
